@@ -1,0 +1,12 @@
+%h1 Forum
+
+-@posts.each do |p|
+  %h2= link_to p.title, p
+  %p= p.content
+  = image_tag p.image.url(:medium) 
+  %p=  time_ago_in_words(p.created_at)
+
+  %hr
+
+
+=link_to 'Sign out', destroy_user_session_path, method: :delete
